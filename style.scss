@@ -1,0 +1,280 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
+}
+
+*::before, *::after{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--grey);
+}
+
+.wrapper i{
+  cursor: pointer;
+}
+
+.controls, .volume, .show_song_no , .music-list2 .header,
+.music-list li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapper{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 80%;
+  overflow: hidden;
+  background: var(--red);
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 12px var(--lightdark);
+}
+
+.wrapper #logo{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.left, .right{
+  position: relative;
+  height: 80%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.left .img-area{
+  position: relative;
+  height: 230px;
+  width: 70%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 6px 12px var(--lightdark);
+}
+
+.img-area img{
+  height: 100%;
+  width: 100%;
+}
+
+.left .song-details{
+  margin-top: 11px;
+}
+
+.song-details p{
+  text-align: center;
+}
+
+.song-details .name{
+  font-size: 23px;
+}
+
+.song-details .artist{
+  font-size: 18px;
+}
+
+/* Both range slider */
+
+input[type="range"]{
+  position: relative;
+  width: 200px;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance: none;
+}
+
+.progress-area .time_music{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  width: 380px;
+}
+
+.timer .current{
+  position: absolute;
+  left: 23%;
+}
+
+.timer .finish{
+  position: absolute;
+  right: 24%;
+}
+
+.controls{
+  margin: 35px 0 8px 0;
+}
+
+.controls i{
+  margin: 8px 20px;
+  background: var(--white);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  box-shadow: 0px 6px 12px var(--lightdark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.options-song i{
+  margin: 20px 0 20px;
+  background: var(--white);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  box-shadow: 0px 6px 12px var(--lightdark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left .volume{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.volume #volume_show{
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background: var(--darkred);
+  padding: 4px 10px;
+}
+
+.volume i{
+  background: var(--darkred);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  margin: 0 8px 0;
+}
+
+.volume input{
+  width: 150px;
+  margin-left: 1px;
+}
+
+/*-- right */
+
+.music-list2{
+ background: var(--grey);
+ border-radius: 10px 10px 0 0;
+ height: 70px;
+ width: 100%;
+}
+
+.header .row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 15px;
+  left: 12px;
+}
+
+.header .row i{
+  font-size: 30px;
+}
+
+.header .row span{
+  font-size: 30px;
+}
+
+.right .show_song_no{
+  position: absolute;
+  top: 15px;
+  right: 12px;
+  font-size: 25px;
+}
+
+.music-list{
+  background: var(--grey);
+  border-radius: 0 0 10px 10px;
+  height: 460px;
+  width: 100%;
+}
+
+.music-list li .row{
+ display: inline-block;
+ justify-content: center;
+ position: relative;
+ top: 0px;
+ left: 5%;
+}
+
+.music-list li .audio-duration{
+  position: relative;
+  top: 0px;
+  right: 5%;
+ }
+
+.music-list ul{
+  max-height: 100%;
+  margin: 0px 0px;
+  overflow-y: auto;
+}
+
+.music-list ul::-webkit-scrollbar{
+  width: 0;
+}
+
+.music-list ul li{
+  cursor: pointer;
+  list-style: none;
+  color: var(--red);
+  padding-bottom: 4px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid var(--white);
+}
+
+.music-list ul li:last-child{
+  border-bottom: 0px;
+}
+
+ul li .audio-duration{
+  font-size: 20px;
+}
+
+/* 1Playingmu 6to step. */
+ul li.playing{
+  color: var(--orange);
+  pointer-events: none;
+}
+
+:root{
+  --green: hsla(120,100%,50%,0.3);
+  --orange: #f1f1f1;
+  --red: #ff0000;
+  --shadowdark: #351717;
+  --lightred: #da7070;
+  --grey: rgb(128,128,128);
+  --blue: #000099;
+  --white: rgb(182, 182, 189);
+  --lightdark: rgb(41, 32, 32);
+  --grey: rgb(102, 83, 83);
+  --lightreddark: rgba(241, 141, 141, 0.3);
+  --darkred: rgba(90, 20, 20, 0.3);
+}

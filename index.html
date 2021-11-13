@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="wrapper">
+
+    <i id="logo" class="material-icons">library_music</i>
+ 
+    <!-- left part -->
+    <div class="left">
+         
+         <div class="img-area">
+             <img src="images/song-1.jpg" alt=" ">
+         </div>
+
+         <div class="song-details">
+           <p class="name"></p>
+           <p class="artist"></p>
+         </div>
+
+         <div class="progress-area">
+            <div class="time-music">
+                
+  <input type="range" min="0" max="100" value="0" id="duration_slider" onchange="change_duration()">
+               
+            </div>
+
+             <div class="timer">
+               <span class="current">0:00</span>
+               <span class="finish"></span>
+             </div>
+
+             <audio id="main-audio" src=""></audio>
+
+         </div>
+
+         <div class="controls">
+            <i id="prev" class="material-icons">skip_previous</i>
+            <div class="play-pause">
+                <i class="material-icons">play_arrow</i>
+            </div>
+            <i id="next" class="material-icons">skip_next</i>
+         </div>
+
+         <div class="options-song">
+            <i id="repeat-plist" class="material-icons" title="Playlist-looped">repeat</i>
+         </div>
+
+         <div class="volume">
+            <p id="volume_show">100</p>
+
+            <input type="range" min="0" max="100" value="100" id="volume" onchange="volume_change()">
+         </div>
+    </div>
+
+    <!-- right part -->
+    <div class="right">
+
+        <div class="music-list2">
+            <div class="header">
+                <div class="row">
+                    <i class="material-icons">queue_music</i>
+                    <span>Music list</span>
+                </div>
+    
+            </div>
+        
+         <div class="show_song_no">
+           <p id="present"></p>
+           <p>/</p>
+           <p id="total"></p>
+         </div>
+
+        </div>
+
+       <!-- song tittle -->
+       <div class="music-list">
+
+         <ul>
+            
+            <!-- here li list are coming from js -->
+            
+         </ul>       
+
+        </div>
+       
+    </div>
+
+</div>
+
+<script src="javascript/music-list.js"></script>
+<script src="javascript/scriptMusic.js"></script>
+    
+</body>
+</html>
